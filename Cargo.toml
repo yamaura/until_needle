@@ -1,0 +1,32 @@
+[package]
+name = "until_needle"
+authors = ["Yuki Yamaura <ymruki@gmail.com>"]
+version = "0.1.0"
+edition = "2021"
+license = "MIT"
+description = "An extension to the BufRead trait that allows reading until a specified pattern (needle) is found."
+homepage = "https://github.com/yamaura/until_needle"
+repository = "https://github.com/yamaura/until_needle"
+
+[metadata.release]
+push = false
+tag-name = "{{prefix}}{{version}}"
+pre-release-commit-message = "Bump version to {{version}}"
+tag-message = "{{tag_name}}"
+
+[metadata.docs.rs]
+all-features = true
+
+[dependencies]
+futures-core = { version = "0.3.30", optional = true }
+futures-util = { version = "0.3.30", features = ["io"], optional = true }
+regex = { version = "1", optional = true }
+
+[features]
+default = ["regex"]
+regex = ["dep:regex"]
+futures = ["dep:futures-core", "dep:futures-util"]
+
+[dev-dependencies]
+futures = "0.3.30"
+tokio = { version = "1.40.0", features=["macros", "rt-multi-thread"]}

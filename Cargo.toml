@@ -1,7 +1,7 @@
 [package]
 name = "until_needle"
 authors = ["Yuki Yamaura <ymruki@gmail.com>"]
-version = "0.1.0"
+version = "0.1.1"
 edition = "2021"
 license = "MIT"
 description = "An extension to the BufRead trait that allows reading until a specified pattern (needle) is found."

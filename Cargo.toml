@@ -10,7 +10,7 @@ repository = "https://github.com/yamaura/until_needle"
 
 [metadata.release]
 push = false
-tag-name = "{{prefix}}{{version}}"
+tag-name = "{{version}}"
 pre-release-commit-message = "Bump version to {{version}}"
 tag-message = "{{tag_name}}"
 

@@ -18,13 +18,11 @@ use std::io::{BufRead, Cursor};
 fn main() {
     let data = b"hello world!!";
     let mut cursor = Cursor::new(data);
-    let mut before = Vec::new();
-    let mut matched = Vec::new();
 
-    let bytes_read = cursor.read_until_needle(b"world", &mut before, &mut matched).unwrap();
-    assert_eq!(bytes_read, b"hello world".len());
-    assert_eq!(before, b"hello ");
-    assert_eq!(matched, b"world");
+    let captures = cursor.read_until_needle(b"world").unwrap();
+    assert_eq!(captures.total_bytes_read(), b"hello world".len());
+    assert_eq!(captures.before(), b"hello ");
+    assert_eq!(captures.matched(), b"world");
 }
 ```
 

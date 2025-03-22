@@ -70,7 +70,6 @@ mod tests {
         assert_eq!("hello".findin(haystack), Some(0..5));
         assert_eq!("world".findin(haystack), Some(6..11));
         assert_eq!("foo".findin(haystack), None);
-
     }
 
     #[cfg(feature = "regex")]

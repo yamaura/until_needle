@@ -18,8 +18,8 @@ tag-message = "{{tag_name}}"
 all-features = true
 
 [dependencies]
-futures-core = { version = "0.3.30", optional = true }
-futures-util = { version = "0.3.30", features = ["io"], optional = true }
+futures-core = { version = "0.3.31", optional = true }
+futures-util = { version = "0.3.31", features = ["io"], optional = true }
 regex = { version = "1", optional = true }
 
 [features]
@@ -28,5 +28,5 @@ regex = ["dep:regex"]
 futures = ["dep:futures-core", "dep:futures-util"]
 
 [dev-dependencies]
-futures = "0.3.30"
+futures = "0.3.31"
 tokio = { version = "1.40.0", features=["macros", "rt-multi-thread"]}
